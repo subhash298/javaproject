@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode with Bulb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .bulb {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 20px;
+            transition: background 0.5s, box-shadow 0.5s;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+
+        .dark-mode .bulb {
+            background: yellow;
+            box-shadow: 0 0 20px yellow;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+        }
+
+        .dark-mode .toggle-btn {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dark Mode Example</h1>
+        <div class="bulb" id="bulb"></div>
+        <button class="toggle-btn" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById("darkModeToggle");
+        const body = document.body;
+
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>
